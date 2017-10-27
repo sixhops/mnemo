@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var isLoggedIn = require('../middleware/isLoggedIn');
+var path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-router.get('/profile', isLoggedIn, function(req, res, next) {
+router.get('/profile', function(req, res, next) {
   res.send('You are logged in and this is your profile.');
 });
 
