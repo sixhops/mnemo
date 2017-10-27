@@ -4,7 +4,7 @@ var isLoggedIn = require('../middleware/isLoggedIn');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('Nothing at the root route yet...');
+  res.sendFile('../client/index');
 });
 
 router.get('/profile', isLoggedIn, function(req, res, next) {
