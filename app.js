@@ -21,7 +21,9 @@ var mongoose = require('mongoose');
 //   }
 // }).then(response => console.log(response));
 console.log(process.env.MONGODB_URI);
-mongoose.connect(process.env.MONGODB_URI, function(err, res) {
+mongoose.connect(process.env.MONGODB_URI, {
+  useMongoClient: true
+}, function(err, res) {
   if (err) {
     console.log("WE GOT AN ERROR!!!!!!!!")
     console.log(err)
