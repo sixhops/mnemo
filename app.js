@@ -49,7 +49,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 /* Configure the express-session...
  * [secret]: A string used to "sign" the session ID cookie, which makes it unique
