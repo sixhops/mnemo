@@ -5,7 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var axios = require('axios');
+// var axios = require('axios');
 
 // Added lines for session, passport, and connect-flash
 // var session = require('express-session');
@@ -25,6 +25,9 @@ mongoose.connect(process.env.MONGODB_URI, function(err, res) {
   if (err) {
     console.log("WE GOT AN ERROR!!!!!!!!")
     console.log(err)
+  } else {
+    console.log("WE DIDN'T GET AN ERROR!!!!!!!!!")
+    console.log(res)
   }
 });
 
