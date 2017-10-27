@@ -1,0 +1,18 @@
+#userProfileBox {
+  overflow: auto;
+  background: lightblue;
+  width: 30%;
+  margin: auto
+}
+
+#userProfileBox p {
+  float: left;
+  margin-left: 1em;
+}
+
+#userProfileBox a {
+  text-decoration: underline;
+  color: blue;
+  float: right;
+  margin: 1em;
+}

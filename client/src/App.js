@@ -21,6 +21,7 @@ class App extends Component {
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.logout = this.logout.bind(this)
+    // this.componentWillMount = this.componentWillMount.bind(this)
     this.componentDidMount = this.componentDidMount.bind(this)
   }
 
@@ -63,7 +64,6 @@ class App extends Component {
   }
 
   render() {
-    var theUser = this.state.user
     if (typeof this.state.user === 'object' && Object.keys(this.state.user).length !== 0) {
       return (
         <div className='App'>
@@ -73,15 +73,15 @@ class App extends Component {
     } else {
       return (
         <div className='App'>
+          <div id='credentialBoxes'>
+            <div className='SignupBox'>
+              <Signup lift={this.liftTokenToState} />
+            </div>
 
-          <div className='SignupBox'>
-            <Signup lift={this.liftTokenToState} />
+            <div className='LoginBox'>
+              <Login lift={this.liftTokenToState} />
+            </div>
           </div>
-
-          <div className='LoginBox'>
-            <Login lift={this.liftTokenToState} />
-          </div>
-
         </div>
       );
     }

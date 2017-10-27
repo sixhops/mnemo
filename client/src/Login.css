@@ -1,0 +1,30 @@
+#loginBox {
+
+}
+
+#loginBox input {
+  font-size: 1.5em;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+#loginBox p {
+  font-size: 1.5em;
+}
+
+#loginBox #loginHint {
+  font-size: 1em;
+}
+
+#loginBox #labels {
+  text-align: right;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#loginBox #inputs {
+  padding-top: 0.75em;
+  text-align: left;
+  vertical-align: top;
+  display: inline-block;
+}

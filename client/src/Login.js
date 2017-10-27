@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -32,11 +33,22 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        Email: <input type='text' value={this.state.email} onChange={this.handleEmailChange} /><br />
-        Password: <input type='password' value={this.state.password} onChange={this.handlePasswordChange} /><br />
-        <input type='submit' value='Log in' />
-      </form>
+      <div id='loginBox'>
+        <form onSubmit={this.handleSubmit}>
+          <p id='loginHint'>Already have an account?</p>
+          <div>
+            <div id='labels'>
+              <p>Email:</p>
+              <p>Password:</p>
+            </div>
+            <div id='inputs'>
+              <input type='text' value={this.state.email} onChange={this.handleEmailChange} /><br />
+              <input type='password' value={this.state.password} onChange={this.handlePasswordChange} /><br />
+            </div>
+          </div>
+          <input type='submit' value='Log in' />
+        </form>
+      </div>
     );
   }
 }

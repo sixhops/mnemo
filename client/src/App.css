@@ -2,17 +2,44 @@
   text-align: center;
 }
 
+#credentialBoxes {
+  vertical-align: top;
+}
+
 .SignupBox {
+  width: 30%;
+  margin-left: auto;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
   background: lightgreen;
   padding: 0.5em;
+  vertical-align: top;
+  transition: 3s;
 }
 
 .LoginBox {
+  width: 30%;
+  margin-left: 1em;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
   background: lightblue;
   padding: 0.5em;
+  vertical-align: top;
+  transition: 3s;
 }
 
-.LogoutBox {
-  background: lightred;
+.UserProfileBox {
+  width: 20%;
+  margin: auto;
+  background: lightblue;
   padding: 0.5em;
+  transition: 3s;
+}
+
+.hidden {
+  opacity: 0;
 }
