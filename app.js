@@ -20,7 +20,7 @@ var mongoose = require('mongoose');
 //     'Accept': 'application/vnd.heroku+json; version=3'
 //   }
 // }).then(response => console.log(response));
-
+console.log(process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI);
 
 var index = require('./routes/index');
