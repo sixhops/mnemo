@@ -21,19 +21,9 @@ var mongoose = require('mongoose');
 //   }
 // }).then(response => console.log(response));
 console.log(process.env.MONGODB_URI);
-mongoose.connect(process.env.MONGODB_URI, {
-  useMongoClient: true
-}, function(err, res) {
-  if (err) {
-    console.log("WE GOT AN ERROR!!!!!!!!")
-    console.log(err)
-  } else {
-    console.log("WE DIDN'T GET AN ERROR!!!!!!!!!")
-    console.log(res)
-  }
-});
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
 
-var index = require('./routes/index');
+// var index = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
 
