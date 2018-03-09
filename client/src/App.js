@@ -27,7 +27,7 @@ class App extends Component {
 
   liftTokenToState(data) {
     this.setState({token: data.token, user: data.user})
-    localStorage.setItem('mernToken', data.token)
+    // localStorage.setItem('mernToken', data.token)
   }
 
   logout() {
@@ -36,9 +36,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // If there is a token in localStorage
+    // If there is not a token in localStorage...
     var token = localStorage.getItem('mernToken')
     if (token === 'undefined' || token === null || token === '' || token === undefined) {
+      // Make sure to clear out the state just in case
       localStorage.removeItem('mernToken')
       this.setState({
         token: '',

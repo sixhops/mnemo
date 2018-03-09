@@ -24,7 +24,13 @@ router.post('/login', function(req, res, next) {
       var token = jwt.sign(user.toObject(), process.env.JWT_SECRET, {
         expiresIn: 60 * 60 * 24 // expires in 24 hours
       });
-      res.json({user: user, token: token});
+      // TODO: Set the headers to set a cookie on the client
+      var cookieObject = {email: user.email, token: token}
+      res.cookie('email', user.email, {
+        expires: new Date(Date.now() + 3600000) // 1 hour from now
+      }).cookie('token', token, {
+        expires: new Date(Date.now() + 3600000) // 1 hour from now 
+      }).json({user: user, token: token});
     } else {
       // Return an error
       res.status(401).json({
@@ -55,6 +61,7 @@ router.post('/signup', function(req, res, next) {
           var token = jwt.sign(user.toObject(), process.env.JWT_SECRET, {
             expiresIn: 60 * 60 * 24 // expires in 24 hours
           });
+          // TODO: Set the headers to set a cookie on the client
           res.json({user: user, token: token});
         }
       });
@@ -82,6 +89,7 @@ router.post('/me/from/token', function(req, res, next) {
       //refresh it)w/ new expiration time at this point, but I’m
       //passing the old token back.
       // var token = utils.generateToken(user);
+      // TODO: Set the headers to set a cookie on the client
       res.json({
         user: user,
         token: token

@@ -15,5 +15,9 @@ var museSchema = new mongoose.Schema({
   dateAdded: {
     type: Date,
     required: true
+  },
+  userId: {
+    type: ObjectId,
+    required: true
   }
 });
